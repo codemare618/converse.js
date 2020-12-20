@@ -86,12 +86,7 @@ const form_fields = (o) => {
 
 
 export default (o) => html`
-    <converse-brand-heading></converse-brand-heading>
-    <form id="converse-login" class="converse-form" method="post">
-        <div class="conn-feedback fade-in ${ !o.conn_feedback_subject ? 'hidden' : o.conn_feedback_class }">
-            <p class="feedback-subject">${ o.conn_feedback_subject }</p>
-            <p class="feedback-message ${ !o.conn_feedback_message ? 'hidden' : '' }">${o.conn_feedback_message}</p>
-        </div>
-        ${ (_converse.CONNECTION_STATUS[o.connection_status] === 'CONNECTING') ? tpl_spinner({'classes': 'hor_centered'}) : form_fields(o) }
-    </form>
+    <div>
+        ${tpl_spinner({'classes': 'hor_centered'})}
+    </div>
 `;
